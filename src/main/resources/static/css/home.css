@@ -1,0 +1,110 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+html{
+    font-size: 15px;
+    font-family: 'Times New Roman','KaiTi','Microsoft YaHei';
+}
+a{
+    text-decoration: none;
+}
+
+#home{
+    margin-top: 2.5em;
+    display: none;
+}
+#show_info{
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+}
+#home_cover_img{
+    height: 100%;
+    /*background: url(../image/5.jpg);*/
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    /*animation-name: slideshow--alt;*/
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    text-align: center;
+}
+@keyframes slideshow--alt{
+
+    100%{
+        opacity:1;
+        transform:scale(1.2);
+    }
+}
+#word_info{
+    position: absolute;
+    left: 50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    text-align: center;
+}
+.blog_title span{
+    font-size: 3rem;
+    color: #ffffff;
+    text-shadow: 5px 2px 6px #000;
+}
+.tab{
+    margin-top: 30px;
+}
+.tab  span{
+    width: 4rem;
+    font-size: 1rem;
+    padding: 0.5rem;
+    margin: 1em;
+    background-color: honeydew;
+    border-radius: 3px;
+    color: indigo;
+}
+.container{
+    display : flex;
+    justify-content:center;
+    margin-top: 20px;
+}
+.all_articles{
+    width: 45rem;
+}
+.article_single{
+    margin: 2rem 0;
+    height: 1.5rem;
+}
+.article_title{
+    float: left;
+    font-size: 1.5rem;
+}
+.article_title a{
+    color: #000000;
+    position:relative;
+}
+.article_title a::after{
+    content:'';
+    display:block;
+    /*开始时候下划线的宽度为100%*/
+    width:100%;
+    height:1px;
+    position:absolute;
+    right: 0px;
+    bottom: 0px;
+    background:#000;
+    transition:all 0.3s ease-in-out;
+    /*通过transform的缩放scale来让初始时x轴为0*/
+    transform: scale3d(0,1,1);
+    /*将坐标原点移到元素的中间，以原点为中心进行缩放*/
+    transform-origin:50% 0;
+}
+.article_title a:hover::after{ /*鼠标经过时还原到正常比例*/
+    transform:scale3d(1,1,1);
+}
+.article_date{
+    font-size: 1.5rem;
+    color: #939393;
+    float: right;
+    text-align: center;
+}
