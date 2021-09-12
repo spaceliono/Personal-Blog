@@ -14,6 +14,7 @@ public class AdminInterceptor implements HandlerInterceptor {
         if (session.getAttribute("loginUser") != null){
             return true;
         }
+        response.sendRedirect("/login");
         return false;
 
     }

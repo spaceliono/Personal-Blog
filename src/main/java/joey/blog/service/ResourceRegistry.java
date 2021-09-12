@@ -17,7 +17,7 @@ public class ResourceRegistry implements WebMvcConfigurer {
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/static/**")
                 .addResourceLocations("classpath:/static/")
-                .addResourceLocations("file:"+ uploadPath);
+                .addResourceLocations("file://"+ uploadPath);
     }
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(new AdminInterceptor()).addPathPatterns("/admin/**");
